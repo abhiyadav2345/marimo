@@ -325,7 +325,7 @@ class TestCombined:
         ctx = AsyncCodeModeContext(k)
         _clear_messages(k)
 
-        async with ctx as nb:  # noqa: B018
+        async with ctx as nb:
             pass
 
         assert _graph_codes(k) == snapshot({"0": "x = 1"})
@@ -388,7 +388,7 @@ class TestSummary:
     ) -> None:
         ctx = AsyncCodeModeContext(k)
 
-        async with ctx as nb:  # noqa: B018
+        async with ctx as nb:
             pass
 
         captured = capsys.readouterr()  # type: ignore[attr-defined]
